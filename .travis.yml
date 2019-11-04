@@ -10,7 +10,7 @@ before_install:
 - mkdir adx
 - cd adx
 - wget $URL
-- tar xzf adx-cli-linux.tar.gz
+- tar xzf adx-dev-cli-linux.tar.gz
 - pwd
 - ls
 - env
