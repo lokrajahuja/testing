@@ -1,0 +1,16 @@
+{
+  "cmc": {
+    "enabled": true,
+    "products": ["AppirioDX"]
+  },
+  "continuousIntegrationType": "travis",
+  "continuousIntegrationURL": "https://travis-ci.org",
+  "projectType": [
+    "legacy-salesforce"
+  ],
+  "rollbar": {
+    "enabled": true
+  },
+  "sourceBranchToClone": "master",
+  "sourceControlType": "git"
+}
