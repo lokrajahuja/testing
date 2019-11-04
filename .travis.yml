@@ -7,12 +7,12 @@ env:
 
 before_install:
 - mkdir adx
+- cd adx
 - wget $URL
-- tar xzf -C ./adx adx-cli-linux.tar.gz
-- "./adx/install"
+- tar xzf adx-cli-linux.tar.gz
 - pwd
 - ls
-- export PATH=./adx/$(pwd):$PATH
+- export PATH=$(pwd)
 
 script:
 - adx --version
