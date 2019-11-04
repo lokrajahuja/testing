@@ -16,4 +16,4 @@ before_install:
 - export PATH=$(pwd):$PATH
 
 script:
-- adx --version
+- adx
