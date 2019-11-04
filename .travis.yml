@@ -12,7 +12,7 @@ before_install:
 - tar xzf adx-cli-linux.tar.gz
 - pwd
 - ls
-- export PATH=./$(pwd):$PATH
+- export PATH=$(pwd):$PATH
 
 script:
 - adx --version
