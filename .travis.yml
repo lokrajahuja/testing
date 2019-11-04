@@ -1,4 +1,5 @@
 sudo: true
+os: linux
 cache: false
 
 env:
@@ -6,7 +7,7 @@ env:
 
 before_install:
 - mkdir adx
-- wget -qO- $URL
+- wget $URL
 - tar -xzf adx-cli-linux.tar.gz
 - "./adx/adx"
 
