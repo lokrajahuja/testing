@@ -1,1 +1,13 @@
-language: java
+sudo: true
+cache: false
+
+env:
+- URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-cli-linux.tar.gz
+
+before_install:
+- mkdir adx
+- wget -qO- $URL | tar -xzf adx-cli-linux.tar.gz
+- "./adx/adx"
+
+script:
+- adx --version
