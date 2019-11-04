@@ -9,7 +9,7 @@ before_install:
 - mkdir adx
 - wget $URL
 - tar -xzf adx-cli-linux.tar.gz
-- "./adx/adx"
+- "./adx"
 
 script:
 - adx --version
