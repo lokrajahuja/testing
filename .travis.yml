@@ -7,7 +7,8 @@ env:
 
 before_install:
 - mkdir adx
-- wget $URL | tar xzf -C adx --strip-components 1
+- wget $URL
+- tar xzf -C adx adx-cli-linux.tar.gz
 - "./adx/install"
 - pwd
 - ls
