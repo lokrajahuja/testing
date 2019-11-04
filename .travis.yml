@@ -13,6 +13,7 @@ before_install:
 - tar xzf adx-cli-linux.tar.gz
 - pwd
 - ls
+- env
 - export PATH=$(pwd):$PATH
 
 script:
