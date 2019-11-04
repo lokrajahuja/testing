@@ -4,7 +4,7 @@ cache: false
 language: generic
 
 env:
-- URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-cli-linux.tar.gz
+- URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-dev-cli-linux.tar.gz
 
 before_install:
 - mkdir adx
