@@ -5,6 +5,11 @@ language: generic
 
 git:
   depth: false
+  
+stages:
+  - lint
+  - build
+  - test
 
 env:
 - URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-dev-cli-linux.tar.gz
@@ -17,11 +22,13 @@ before_install:
 - env
 - export PATH=$(pwd):$PATH
 
-#stages:
-#- name : feature
- # if: branch = master
-  #jobs:
- # - job: 
-scripts:
-- adx ci:shell -s dummy.sh
+jobs:
+  include:
+      - stage: lint
+        script: echo 'lint'
+      - stage: build
+        script:
+          - echo 'build'
+      - stage: test
+        script: echo 'test'
   
