@@ -23,5 +23,5 @@ before_install:
   #jobs:
  # - job: 
 scripts:
-  adx ci:shell -s dummy.sh
+- adx ci:shell -s dummy.sh
   
