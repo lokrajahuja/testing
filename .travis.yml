@@ -7,19 +7,39 @@ git:
   depth: false
   
 stages:
-  - lint
-  - build
-  - test
+  - sonarqube_scan_publish
+  if: (branch = master) OR (branch = feature/*)
+  - validate_against_SIT
+  if: branch = feature/*
+  - deploy_to_SIT
+  if: branch = SIT
+  - validate_against_UAT
+  if: branch = SIT
+  - deploy_to_UAT
+  if: branch = master
+  - validate_against_PROD
+  if: branch = master
+  - deploy_to_PROD
+  if: tag = v*
+
 
 jobs:
   include:
-      - stage: lint
-        script: echo 'lint'
-      - stage: build
+      - stage: sonarqube_scan_publish
+        script: echo 'sonarqube_scan_publish'
+      - stage: validate_against_SIT
         script:
-          - echo 'build'
-      - stage: test
-        script: echo 'test'
+          - echo 'validate_against_SIT'
+      - stage: deploy_to_SIT
+        script: echo 'deploy_to_SIT'
+      - stage: validate_against_UAT
+        script: echo 'validate_against_UAT'
+      - stage: deploy_to_UAT
+        script: echo 'deploy_to_UAT'
+      - stage: validate_against_PROD
+        script: echo 'validate_against_PROD'
+      - stage: deploy_to_PROD
+        script: echo 'deploy_to_PROD'
         
 env:
 - URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-dev-cli-linux.tar.gz
