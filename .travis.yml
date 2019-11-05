@@ -3,6 +3,9 @@ os: linux
 cache: false
 language: generic
 
+git:
+  depth: false
+
 env:
 - URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-dev-cli-linux.tar.gz
 
@@ -11,10 +14,14 @@ before_install:
 - cd adx
 - wget $URL
 - tar xzf adx-dev-cli-linux.tar.gz
-- pwd
-- ls
 - env
 - export PATH=$(pwd):$PATH
 
-script:
-- adx
+#stages:
+#- name : feature
+ # if: branch = master
+  #jobs:
+ # - job: 
+scripts:
+  adx ci:shell -s dummy.sh
+  
