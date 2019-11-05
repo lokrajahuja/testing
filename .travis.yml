@@ -11,17 +11,6 @@ stages:
   - build
   - test
 
-env:
-- URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-dev-cli-linux.tar.gz
-
-before_install:
-- mkdir adx
-- cd adx
-- wget $URL
-- tar xzf adx-dev-cli-linux.tar.gz
-- env
-- export PATH=$(pwd):$PATH
-
 jobs:
   include:
       - stage: lint
