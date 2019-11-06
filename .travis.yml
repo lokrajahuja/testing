@@ -54,6 +54,10 @@ before_install:
 - ls
 - export PATH=$(pwd)/sonar-scanner-cli-3.0.3.778-linux/bin:$PATH
 - export PATH=$(pwd):$PATH
+- cd sonar-scanner-cli-3.0.3.778-linux
+- ls
+- cd bin
+- ls
 - env
 
   
