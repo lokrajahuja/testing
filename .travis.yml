@@ -1,6 +1,7 @@
 sudo: true
 os: linux
 cache: false
+language: generic
 
 git:
   depth: false
