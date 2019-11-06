@@ -8,7 +8,9 @@ git:
   
 stages:
   - sonarqube_scan_publish
+    if: (branch = master) 
   - validate_against_SIT
+    if: branch =~ feature\/*
   - deploy_to_SIT
   - validate_against_UAT
   - deploy_to_UAT
