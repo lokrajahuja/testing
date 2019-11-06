@@ -10,7 +10,7 @@ stages:
   - sonarqube_scan_publish
   if: (branch = master) OR (branch = feature/*)
   - validate_against_SIT
-  if: branch = feature/*
+  if: branch =~ feature/*
   - deploy_to_SIT
   if: branch = SIT
   - validate_against_UAT
