@@ -8,9 +8,9 @@ git:
   
 stages:
   - name: sonarqube_scan_publish
-    if: (branch =~ feature\/*)
+    if: (branch =~ feature\/*) OR (branch = master)
   - name: validate_against_SIT
-    if: branch = feature/*
+    if: branch =~ feature\/*
   - name: deploy_to_SIT
     if: branch = SIT
   - name: validate_against_UAT
@@ -20,7 +20,7 @@ stages:
   - name: validate_against_PROD
     if: branch = master
   - name: deploy_to_PROD
-    if: tag = v*
+    if: tag =~ v*
 
 
 jobs:
