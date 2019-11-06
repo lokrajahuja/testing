@@ -43,16 +43,13 @@ jobs:
       - stage: deploy_to_PROD
         script: echo 'deploy_to_PROD'
         
-env:
-- ADX_CLI_URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-dev-cli-linux.tar.gz
-- SONAR_URL=https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip
 
 before_install:
 - mkdir adx
 - cd adx
-- wget $ADX_CLI_URL
+- wget https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-dev-cli-linux.tar.gz
 - tar xzf adx-dev-cli-linux.tar.gz
-- wget $SONAR_URL
+- wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip
 - unzip sonar-scanner-cli-4.2.0.1873-linux.zip
 - env
 - export PATH=$(pwd):$PATH
