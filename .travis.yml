@@ -8,19 +8,12 @@ git:
   
 stages:
   - sonarqube_scan_publish
-  if: (branch = master)
   - validate_against_SIT
-  if: branch =~ feature\/*
   - deploy_to_SIT
-  if: branch = SIT
   - validate_against_UAT
-  if: branch = SIT
   - deploy_to_UAT
-  if: branch = master
   - validate_against_PROD
-  if: branch = master
   - deploy_to_PROD
-  if: tag = v*
 
 
 jobs:
