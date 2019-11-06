@@ -26,7 +26,9 @@ stages:
 jobs:
   include:
       - stage: sonarqube_scan_publish
-        script: echo 'sonarqube_scan_publish'
+        script: 
+          - adx
+          - sonar-scanner --version
       - stage: validate_against_SIT
         script:
           - echo 'validate_against_SIT'
@@ -42,13 +44,16 @@ jobs:
         script: echo 'deploy_to_PROD'
         
 env:
-- URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-dev-cli-linux.tar.gz
+- ADX_CLI_URL=https://appiriodx-website-prod.s3.amazonaws.com/downloads/adx-dev-cli-linux.tar.gz
+- SONAR_URL=https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip
 
 before_install:
 - mkdir adx
 - cd adx
-- wget $URL
+- wget $ADX_CLI_URL
 - tar xzf adx-dev-cli-linux.tar.gz
+- wget $SONAR_URL
+- unzip sonar-scanner-cli-4.2.0.1873-linux.zip
 - env
 - export PATH=$(pwd):$PATH
 
