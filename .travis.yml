@@ -51,6 +51,7 @@ before_install:
 - tar xzf adx-dev-cli-linux.tar.gz
 - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip
 - unzip sonar-scanner-cli-3.0.3.778-linux.zip
+- ls
 - export PATH=$(pwd)/sonar-scanner-cli-3.0.3.778-linux/bin:$PATH
 - export PATH=$(pwd):$PATH
 - env
